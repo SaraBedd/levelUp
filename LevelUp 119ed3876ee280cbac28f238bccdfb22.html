@@ -1,0 +1,734 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>LevelUp </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3; /* Light grey background */
+}
+
+img {
+        width: 900px !important; /* Fixed width for all images */
+        height: auto !important; /* Maintain aspect ratio */
+    }
+
+	/* Responsive Video Container */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 25px; /* Optional: Adjust as needed */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.video-container iframe, 
+.video-container object, 
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="119ed387-6ee2-80cb-ac28-f238bccdfb22" class="page sans"><header><img class="page-cover-image" src="lup2.png" style="object-position:center 64.26%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/arrow-up_pink.svg"/></div><h1 class="page-title">LevelUp </h1><p class="page-description"></p></header><div class="page-body"><h2 id="119ed387-6ee2-8048-8900-f4f012e18bf0" class=""><mark class="highlight-default"><mark class="highlight-default_background">Introduction</mark></mark></h2><p id="119ed387-6ee2-80ee-b0db-e9716209251c" class=""><em>&quot; Dans un monde où chacun veut se distinguer, comment expliquer que tous les CV se ressemblent? »</em></p><p id="119ed387-6ee2-80c3-9190-f86be793d956" class="">En tant qu&#x27;étudiante en informatique, j&#x27;ai toujours pensé que la programmation est une activité profondément créative, non seulement dans la manière de résoudre des problèmes, mais aussi dans les supports utilisés pour présenter ces solutions. Ces supports peuvent être statiques ou dynamiques, intégrant de la musique, des vidéos et des éléments interactifs. Alors pourquoi, lorsqu&#x27;il s&#x27;agit de nos CV, nous limitons-nous à une simple feuille sans couleur ni touche personnelle?</p><p id="119ed387-6ee2-804f-a0b0-efacfb276f74" class="">Pour ce projet, j&#x27;ai choisi de repenser mon CV en y intégrant des éléments ludiques qui reflètent ma personnalité et mes compétences en tant que développeuse. Mon objectif était de concevoir un CV à mon image, captivant et original, qui reflète mon parcours de façon unique et amusante.</p><h2 id="119ed387-6ee2-8098-b520-f7a1625c5404" class=""><mark class="highlight-default_background">Phase 1: L&#x27;idée</mark></h2><p id="119ed387-6ee2-806d-ab58-e5cfdc8d9d9d" class="">L’inspiration pour mon projet a commencé l’été dernier, durant mon stage. Mon mentor, qui travaillait dans l’entreprise depuis plus de dix ans, a soudainement été licencié. Ce n’était pas inhabituel à l’époque, car de nombreuses grandes entreprises technologiques procédaient à des « <em>layoffs</em> ». Les domaines du génie informatique, qui étaient tellement en demande avant et pendant la COVID, venaient tout juste de connaître un retournement de situation. Il fallait maintenant bien plus qu’avant pour se démarquer.</p><p id="119ed387-6ee2-80ec-b858-ed9ef421ebc2" class="">Un an plus tard, mon frère venait tout juste de terminer son baccalauréat en informatique. Il était à la recherche d’un emploi, mais, malgré environ 150 candidatures, il n’avait obtenu que deux entretiens et aucune offre. Je lui ai alors suggéré de créer un site Web pour son CV, parce que je voyais bien que la version imprimée ne le mettait pas en valeur. Il devait avoir un endroit où il pouvait démontrer ses compétences et sa personnalité d’une façon dynamique, ce qui attirerait vraiment l’attention des employeurs.</p><p id="119ed387-6ee2-80c2-8679-dce7bb515af2" class="">À ce moment-là, je commençais à me lasser des CV traditionnels. Tous ces CV se ressemblent, surtout parce que les entreprises utilisent l’intelligence artificielle pour les analyser avant même qu’un être humain ne les regarde. C’est seulement lors d’événements de réseautage qu’on peut rencontrer des responsables du recrutement et leur présenter notre CV ennuyeux, qui est censé nous décrire comme étant un bon candidat. Alors, en encourageant mon frère à penser autrement, une idée m’est venue : pourquoi ne pas créer mon propre CV de façon non conventionnelle?</p><p id="119ed387-6ee2-807b-8bd7-d8d8cbda9ee8" class="">Lorsque Mme Morin a abordé le sujet des projets personnels, l’idée de concevoir un CV sous forme de jeu a véritablement germé. En effet, développer un jeu est non seulement amusant, mais aussi stimulant sur le plan créatif, au niveau de l’histoire et des visuels. J&#x27;avais également envisagé d&#x27;autres projets, comme une application pour mieux gérer les priorités, car avec mon TDAH, j&#x27;ai souvent du mal à organiser mes tâches. Mais ce qui m&#x27;a poussée à choisir le CV-jeu, c&#x27;est avant tout l&#x27;enthousiasme de mon enseignante, car son retour positif a renforcé ma motivation. En général, recevoir un retour encourageant sur une idée nous incite à y investir toute notre énergie et c’est exactement ce qui m’est arrivé !</p><h2 id="119ed387-6ee2-802b-a3a3-ef984c5ffb38" class="">Phase 2: Recherche et Inspiration</h2><p id="119ed387-6ee2-80da-a0dd-dcde859de6cd" class="">Avec mon idée bien définie, je devais comprendre comment transformer mon CV en jeu et ce que cela impliquerait. J’ai commencé par faire des recherches sur les CV interactifs existants pour voir ce qui avait déjà été fait. En explorant plusieurs exemples, j’ai noté les éléments qui m’inspiraient et ceux à éviter.</p><ol type="1" id="119ed387-6ee2-805f-a418-e03ec89c1808" class="numbered-list" start="1"><li><a href="http://www.rleonardi.com/interactive-resume/">Robby Leonardi</a><p id="119ed387-6ee2-8060-bb9a-de714012e90a" class="">Ce CV présente les informations sous forme de jeu à défilement latéral où l’utilisateur avance ou recule et voit apparaître divers éléments illustrant les compétences et expériences.</p><p id="119ed387-6ee2-8000-9a92-f32342b770e1" class=""><strong>Ce que j&#x27;ai aimé:</strong></p><ul id="119ed387-6ee2-8076-be6f-ce96b52e37cf" class="bulleted-list"><li style="list-style-type:disc">Le créateur maîtrise le design. Il a clairement investi beaucoup de temps dans la création de ce site.</li></ul><ul id="119ed387-6ee2-8040-9817-ea74e702c10f" class="bulleted-list"><li style="list-style-type:disc"> L’expérience est engageante grâce à ses animations et à ses composants interactifs.</li></ul><ul id="119ed387-6ee2-803e-8aa8-c5234bf5ae57" class="bulleted-list"><li style="list-style-type:disc">Les informations sont bien structurées grâce à des bannières et du texte.</li></ul><p id="119ed387-6ee2-80d2-9c6c-da46884bd13d" class=""><strong>Ce que j&#x27;ai moins aimé:</strong></p><ul id="119ed387-6ee2-809f-9d37-c12f90b0fc38" class="bulleted-list"><li style="list-style-type:disc">Les contrôles de déplacement ne répondent pas toujours bien.</li></ul><ul id="119ed387-6ee2-80a4-80bf-d037d174946d" class="bulleted-list"><li style="list-style-type:disc">À part le déplacement, l’utilisateur n’a pas beaucoup d’interactions et se contente de lire.</li></ul></li></ol><ol type="1" id="119ed387-6ee2-8063-af60-c49d97b49b7c" class="numbered-list" start="2"><li><a href="https://bruno-simon.com/">Bruno Simon</a><p id="119ed387-6ee2-8053-96e9-fd0881d8dbdd" class="">Ce CV propose de diriger une voiture dans un monde 3D représentant les projets et réalisations du créateur, développé avec Blender, un outil de modélisation 3D.</p><p id="119ed387-6ee2-805a-99f6-e3471595750e" class=""><strong>Ce que j&#x27;ai aimé:</strong></p><ul id="119ed387-6ee2-8047-8f94-ffe1f3953309" class="bulleted-list"><li style="list-style-type:disc">Des interactions comme faire tomber le nom du créateur en fonçant dedans avec la voiture sont amusantes.</li></ul><ul id="119ed387-6ee2-8083-8dc0-e3265055a89e" class="bulleted-list"><li style="list-style-type:disc">Parcourir un CV en trois dimensions est très agréable.</li></ul><p id="119ed387-6ee2-80a1-85ee-e14260a5117b" class=""><strong>Ce que j&#x27;ai moins aimé:</strong></p><ul id="119ed387-6ee2-8042-a0bb-d84033ba5ea6" class="bulleted-list"><li style="list-style-type:disc">La carte est très vide et générique. On ne saisit pas bien la personnalité du créateur.</li></ul><ul id="119ed387-6ee2-80c7-a505-f28bb6e88924" class="bulleted-list"><li style="list-style-type:disc">La navigation de la voiture est difficile (il faut appuyer sur deux touches pour bouger et mes doigts ont eu mal).</li></ul><ul id="119ed387-6ee2-80f2-87b8-e1b6b0c911a6" class="bulleted-list"><li style="list-style-type:disc">Il est difficile de se concentrer sur le contenu tout en conduisant.</li></ul></li></ol><ol type="1" id="119ed387-6ee2-8026-9f1b-d55caa66599f" class="numbered-list" start="3"><li><a href="https://ash.ms/">Ashley</a><p id="119ed387-6ee2-8042-8f84-cfac3347648b" class="">Mon préféré parmi ceux que j’ai découverts. Ce CV recrée l’apparence d’un ancien système d’exploitation Windows, permettant aux utilisateurs d’explorer différents &quot;programmes&quot; pour découvrir le travail du développeur.</p><p id="119ed387-6ee2-802a-8081-f6c7045444e0" class=""><strong>Ce que j&#x27;ai aimé:</strong></p><ul id="119ed387-6ee2-80a0-b890-c75eb5609167" class="bulleted-list"><li style="list-style-type:disc">Reproduction impeccable de l’OS Windows, on dirait qu’on utilise un ordinateur !</li></ul><ul id="119ed387-6ee2-80cf-9eeb-ecabdecde0bf" class="bulleted-list"><li style="list-style-type:disc">On peut interagir avec les dossiers et fichiers, comme sur un vrai bureau.</li></ul><p id="119ed387-6ee2-80c4-9301-f20245fa620d" class=""><strong>Ce que j&#x27;ai moins aimé:</strong></p><ul id="119ed387-6ee2-8001-a094-d2db5008af26" class="bulleted-list"><li style="list-style-type:disc">Des utilisateurs non techniques pourraient ne pas comprendre des termes comme « README » ou savoir où se diriger pour trouver la bonne information.</li></ul></li></ol><p id="119ed387-6ee2-8071-8317-c29475fbee07" class="">Voici un résumé de ma pensée sous forme de tableau :</p><h3 id="119ed387-6ee2-80f0-9998-f8247a5d0893" class="">Tableau 1: Résumé de mes découvertes</h3><table id="119ed387-6ee2-8060-9fce-ff60343ef222" class="simple-table"><tbody><tr id="119ed387-6ee2-80ab-8a32-d610bcc02a92"><td id="T`Rq" class=""><strong>CV</strong></td><td id="|\}y" class=""><strong>Ce que j&#x27;ai aimé</strong></td><td id="nzAK" class=""><strong>Ce que j&#x27;ai moins aimé</strong></td><td id="tNVx" class=""><strong>Leçons pour mon projet</strong></td></tr><tr id="119ed387-6ee2-8059-912c-df9069265cb5"><td id="T`Rq" class=""><strong>Robby Leonardi</strong></td><td id="|\}y" class="">- Design soigné et visuels dynamiques<br/>- Bannières et titres bien pensés<br/></td><td id="nzAK" class="">- Navigation difficile<br/>- Interactivité limitée<br/></td><td id="tNVx" class="">- Investir dans le design visuel<br/>- Ajouter des éléments interactifs<br/></td></tr><tr id="119ed387-6ee2-8088-9b02-ecb0ae6abdca"><td id="T`Rq" class=""><strong>Bruno Simon</strong></td><td id="|\}y" class="">- Approche 3D originale</td><td id="nzAK" class="">- Manque de personnalité<br/>- Navigation difficile<br/></td><td id="tNVx" class="">- Rendre l&#x27;interaction fluide et simple<br/>- Créer un environnement clair et engageant<br/></td></tr><tr id="119ed387-6ee2-8033-b8a6-dbc197661912"><td id="T`Rq" class=""><strong>Ashley</strong></td><td id="|\}y" class="">- Exploration intuitive et engageante</td><td id="nzAK" class="">- Jargon technique</td><td id="tNVx" class="">- Assurer l’accessibilité pour tous</td></tr></tbody></table><p id="119ed387-6ee2-801a-877b-d0b35fe2a98c" class="">L’exploration de CV interactifs m’a fait réaliser ce que je souhaite pour mon propre CV-jeu:</p><ol type="1" id="119ed387-6ee2-80a5-a383-e57de361c447" class="numbered-list" start="1"><li>Je veux que mon CV mette en évidence l’évolution de mes compétences et de mon expérience.</li></ol><ol type="1" id="119ed387-6ee2-80e4-b63b-db5a58bcc3ad" class="numbered-list" start="2"><li>Je souhaite que mon CV se démarque des autres, avec un design unique qui capte l’attention.</li></ol><ol type="1" id="119ed387-6ee2-80a1-86f5-c335bfe9814a" class="numbered-list" start="3"><li>J’aimerais offrir une expérience où l’utilisateur peut interagir avec le contenu, ce qui rendrait son expérience plus engageante et immersive.</li></ol><ol type="1" id="119ed387-6ee2-8033-839f-ec3c552b6579" class="numbered-list" start="4"><li>Je veux que mon CV reflète non seulement mes compétences, mais aussi qui je suis en tant que personne. J’aimerais qu’il mette en avant mes passe-temps et mes valeurs</li></ol><h2 id="119ed387-6ee2-80a7-9927-f3daee2254f1" class="">Phase 3: Idéation</h2><p id="119ed387-6ee2-802a-8ce8-e0d1cbcca9f6" class="">J’ai ensuite entamé la phase de génération d’idées. Mon but était de transformer mon CV en une expérience captivante et interactive qui mettrait en évidence mes compétences et ma personnalité. Pour atteindre cet objectif, j’ai employé diverses techniques créatives apprises dans notre cours, comme le « mind mapping », la méthode « SCAMPER » et la pensée divergente. Ces techniques m’ont permis d’explorer différentes idées et d’établir des connexions entre les éléments du jeu et le contenu de mon CV.</p><h3 id="119ed387-6ee2-801c-bb77-ce83febbbc3d" class="">Carte Mentale</h3><p id="119ed387-6ee2-8055-8859-e0759f49fbe6" class="">Ma première approche a été d’élaborer une carte mentale qui relie directement les mécanismes et structures de jeu aux différents éléments de mon CV. Cet outil visuel m’a permis d’identifier comment chaque aspect de mon profil pouvait être représenté à travers des composantes du jeu.</p><figure id="119ed387-6ee2-80e6-b968-e16a2913e36b" class="image"><a href="image.png"><img style="width:707.9861450195312px" src="image.png"/></a></figure><p id="119ed387-6ee2-8064-b94e-f3be39df681d" class="">Cette carte mentale m&#x27;a déjà permis d’avoir une meilleure idée des liens possibles entre le domaine du jeu et un CV. Voici mes premières remarques concernant mes objectifs:</p><ol type="1" id="119ed387-6ee2-80bf-9747-f795e98c907c" class="numbered-list" start="1"><li><em>Je veux que mon CV mette en valeur l’évolution de mes compétences et de mon expérience.</em><p id="119ed387-6ee2-8056-8cdf-f6080a4e8099" class="">En incorporant des niveaux dans le jeu représentant les diverses phases de mon parcours professionnel, je peux matérialiser visuellement et de manière interactive mon cheminement professionnel. Chaque quête accomplie correspondrait à l’acquisition de compétences ou de connaissances essentielles. Par exemple, terminer une mission pourrait symboliser la maîtrise d’une nouvelle technologie. De plus, à chaque étape, mon personnage pourrait gagner des badges ou des trophées qui reflèteraient ma progression dans le temps.</p></li></ol><ol type="1" id="119ed387-6ee2-8038-bd83-f5184e4d7675" class="numbered-list" start="2"><li><em>Je veux que mon CV reflète non seulement mes compétences, mais aussi qui je suis en tant que personne</em><p id="119ed387-6ee2-8054-be97-f079c188b652" class="">Pour ajouter une dimension personnelle à mon CV, je pourrais inclure des quêtes secondaires qui mettent en évidence mes passions et mes valeurs. Ces quêtes pourraient être facultatives, mais elles donneraient un aperçu plus complet de mes intérêts en dehors du travail. Par exemple, une quête pourrait mettre en évidence mon intérêt pour la photographie en demandant à l’utilisateur de se promener dans l’univers et d’immortaliser un moment.</p><h3 id="119ed387-6ee2-80b7-a4e1-fe0cefd2b6e9" class="">SCAMPER</h3><p id="119ed387-6ee2-8008-a4ea-ee6834423881" class="">J’ai ensuite appliqué la technique <em>SCAMPER</em> comme suit:</p><ul id="119ed387-6ee2-808f-8109-e5e741094035" class="bulleted-list"><li style="list-style-type:disc"><strong>Substitute:</strong> Remplacer du texte statique par un élément interactif. Par exemple, transformer une liste à puces de compétences en un arbre de compétences (« <em>skill tree</em> ») que les utilisateurs peuvent explorer.</li></ul><ul id="119ed387-6ee2-80cd-9572-f969e11fd1a8" class="bulleted-list"><li style="list-style-type:disc"><strong>Combine:</strong> Fusionner des sections du CV. Par exemple, combiner les compétences acquises durant les missions avec celles obtenues en éducation pour créer un récit continu.</li></ul><ul id="119ed387-6ee2-80d4-832e-d19c9c1ebee1" class="bulleted-list"><li style="list-style-type:disc"><strong>Adapt:</strong> Conserver le CV tel quel, mais l’adapter sous forme d’exposition dans une galerie en réalité virtuelle.</li></ul><ul id="119ed387-6ee2-8039-b5ca-c3cef66c242e" class="bulleted-list"><li style="list-style-type:disc"><strong>Modify:</strong> Changer le style d’écriture pour qu’il soit plus familier et personnel.</li></ul><ul id="119ed387-6ee2-80fa-b867-f5c76a6cfa11" class="bulleted-list"><li style="list-style-type:disc"><strong>Put to Another Use:</strong> Utiliser le jeu pour démontrer des compétences. Par exemple, plutôt que de dire que je peux créer un agent IA pour préparer quelqu’un à une entrevue, je pourrais le déployer et laisser l’utilisateur l’essayer lui-même.</li></ul><ul id="119ed387-6ee2-80c4-98e3-cea1ef548984" class="bulleted-list"><li style="list-style-type:disc"><strong>Eliminate:</strong> Retirer les informations inutiles, comme mon ancien baccalauréat en génie chimique.</li></ul><ul id="119ed387-6ee2-80e0-8915-c0140fd1061d" class="bulleted-list"><li style="list-style-type:disc"><strong>Rearrange:</strong> Permettre une exploration non linéaire, en laissant les utilisateurs choisir les niveaux (expériences) qu’ils veulent explorer selon leurs intérêts. </li></ul><p id="119ed387-6ee2-805a-a591-e51bec0af3a2" class="">Personnellement, je ne suis pas une grande fan de cette technique, mais ce que j&#x27;en ai retiré est la possibilité de présenter mon CV sous forme de jeu, ainsi que sous forme de galerie que les utilisateurs peuvent explorer.</p></li></ol><h3 id="119ed387-6ee2-80e0-a627-eefb68dc844c" class="">Brainstorming</h3><p id="119ed387-6ee2-80b3-aa7c-d438ee5bb7d5" class="">En appliquant ces techniques, j&#x27;ai généré plusieurs idées:</p><p id="119ed387-6ee2-80de-8a45-de76156813ed" class=""><strong>1. Jeu de plateforme</strong></p><ul id="119ed387-6ee2-80e1-be69-c9f2f9bf4388" class="bulleted-list"><li style="list-style-type:disc"><strong>Concept:</strong> Un jeu de plateforme à défilement horizontal où l&#x27;utilisateur contrôle un personnage qui me représente, naviguant à travers des niveaux correspondant aux différentes étapes de ma carrière.</li></ul><ul id="119ed387-6ee2-80d2-a8cf-c80333a9cb86" class="bulleted-list"><li style="list-style-type:disc"><strong>Intégration:</strong><ul id="119ed387-6ee2-80ce-b7ba-ed314e6db859" class="bulleted-list"><li style="list-style-type:circle"><strong>Niveaux comme expériences professionnelles:</strong> Chaque niveau représente un emploi ou un stage, avec des défis reflétant les responsabilités du poste.</li></ul><ul id="119ed387-6ee2-801c-85bf-c15080f126b4" class="bulleted-list"><li style="list-style-type:circle"><strong>Arbres de compétences:</strong> Accessibles dans les statistiques du personnage, ils montrent mes compétences techniques et permettent à l’utilisateur d’explorer mes qualifications.</li></ul><ul id="119ed387-6ee2-8080-b8d9-f49a5668bee7" class="bulleted-list"><li style="list-style-type:circle"><strong>Objets à collecter:</strong> Mes réalisations sont dispersées dans les niveaux en tant qu&#x27;objets à collecter.</li></ul><ul id="119ed387-6ee2-80db-9c87-ed7fc7d7a713" class="bulleted-list"><li style="list-style-type:circle"><strong>Quêtes secondaires:</strong> Des défis optionnels qui représentent mes intérêts et loisirs.</li></ul></li></ul><ul id="119ed387-6ee2-8006-acf4-c92a4d249b7e" class="bulleted-list"><li style="list-style-type:disc"><strong>Esthétique:</strong> 2D, design pixel et mignon.</li></ul><p id="119ed387-6ee2-8036-932f-e68579eb911b" class=""><strong>2. Jeu RPG</strong></p><ul id="119ed387-6ee2-80fa-a8c4-eb039408bc31" class="bulleted-list"><li style="list-style-type:disc"><strong>Concept:</strong> Un jeu vidéo de rôle dans lequel les joueurs affrontent des épreuves que j’ai moi-même surmontées, tout en incarnant des personnages ayant influencé ma carrière.</li></ul><ul id="119ed387-6ee2-8089-8d1d-de93e7982e13" class="bulleted-list"><li style="list-style-type:disc"><strong>Intégration:</strong><ul id="119ed387-6ee2-8077-9e59-f302d57b6b2d" class="bulleted-list"><li style="list-style-type:circle"><strong>Fiche de personnage:</strong> Description des rôles et compétences des personnages.</li></ul><ul id="119ed387-6ee2-8037-99c6-d927b8bfee3d" class="bulleted-list"><li style="list-style-type:circle"><strong>Quêtes:</strong> Chaque quête représente un projet ou une expérience marquante.</li></ul><ul id="119ed387-6ee2-807b-993d-de85546748ed" class="bulleted-list"><li style="list-style-type:circle"><strong>Développement de compétences:</strong> L’utilisateur &quot;monte en niveau&quot; en complétant les quêtes.</li></ul></li></ul><ul id="119ed387-6ee2-800e-8689-d29252c86abd" class="bulleted-list"><li style="list-style-type:disc"><strong>Esthétique:</strong> Fantaisie, car en général c’est le style des RPG.</li></ul><p id="119ed387-6ee2-802a-8d40-dedb57b987ce" class=""><strong>3. Jeu d’aventure-puzzle</strong></p><ul id="119ed387-6ee2-80c8-8749-c18ff652b627" class="bulleted-list"><li style="list-style-type:disc"><strong>Concept:</strong> L’utilisateur résout des puzzles liés à mes compétences pour déverrouiller des sections de mon CV.</li></ul><ul id="119ed387-6ee2-80e1-8715-f96393904b92" class="bulleted-list"><li style="list-style-type:disc"><strong>Intégration:</strong><ul id="119ed387-6ee2-803b-b515-c173a11b27d8" class="bulleted-list"><li style="list-style-type:circle"><strong>Puzzles:</strong> Représentent des défis techniques que j&#x27;ai surmontés.</li></ul><ul id="119ed387-6ee2-8052-9c80-e85dda4fb7bb" class="bulleted-list"><li style="list-style-type:circle"><strong>Contenu déverrouillé:</strong> La résolution des puzzles dévoile des informations détaillées sur mes projets et compétences.</li></ul></li></ul><ul id="119ed387-6ee2-8054-a4ed-db6c59d354fe" class="bulleted-list"><li style="list-style-type:disc"><strong>Esthétique:</strong> Un design minimaliste pour garder l’attention sur les puzzles et le contenu.</li></ul><p id="119ed387-6ee2-8075-9bc3-f738705ca174" class=""><strong>4. Jeu CTF (</strong><em><strong>Capture The Flag</strong></em><strong>)</strong></p><ul id="119ed387-6ee2-80f9-80f2-e525f9b937b6" class="bulleted-list"><li style="list-style-type:disc"><strong>Concept:</strong> Un jeu où l’utilisateur accède à un environnement informatique et doit rechercher des informations.</li></ul><ul id="119ed387-6ee2-8074-b31b-c8bd945af6cc" class="bulleted-list"><li style="list-style-type:disc"><strong>Intégration:</strong><ul id="119ed387-6ee2-80b9-baba-e0ac318a60fc" class="bulleted-list"><li style="list-style-type:circle"><strong>Contenu déverrouillé:</strong> La résolution des défis révèle des aspects de mon CV.</li></ul></li></ul><ul id="119ed387-6ee2-8040-8fad-ec5dead18dde" class="bulleted-list"><li style="list-style-type:disc"><strong>Esthétique:</strong> Environement Linux.</li></ul><p id="119ed387-6ee2-80ca-9b90-e40bdc313f29" class=""><strong>5. Jeu VR</strong></p><ul id="119ed387-6ee2-80be-83a2-d774efbeb762" class="bulleted-list"><li style="list-style-type:disc"><strong>Concept:</strong> Créer un musée en réalité virtuelle où l’utilisateur explore différentes expositions représentant divers aspects de mon CV.</li></ul><ul id="119ed387-6ee2-805c-94a6-ecb0162544ce" class="bulleted-list"><li style="list-style-type:disc"><strong>Intégration:</strong><ul id="119ed387-6ee2-809c-97ff-ed19b1e6047b" class="bulleted-list"><li style="list-style-type:circle"><strong>Expositions comme sections du CV:</strong> Différentes salles présentent mon parcours personnel, mes expériences professionnelles et mes passions.</li></ul><ul id="119ed387-6ee2-809b-a156-ea057145d2b8" class="bulleted-list"><li style="list-style-type:circle"><strong>Objets interactifs:</strong> Les utilisateurs interagissent avec des objets qui représentent des projets, réalisations et intérêts personnels.</li></ul></li></ul><ul id="119ed387-6ee2-805d-80c9-df1b8e868b9d" class="bulleted-list"><li style="list-style-type:disc"><strong>Esthétique:</strong> 3D.</li></ul><h3 id="119ed387-6ee2-8096-b6c0-c37c57438daa" class="">Sélection des idées finales</h3><p id="119ed387-6ee2-8010-b7cf-fb1c0d2ad634" class="">J’ai finalement choisi les deux idées suivantes parce que j’ai trouvé qu’elles me plaisaient le plus et que l’idée du CTF ne serait pas amusante pour les gens qui ne sont pas en sécurité.</p><p id="119ed387-6ee2-8069-b824-cc4f641ad342" class=""><strong>1. Expérience de musée en réalité virtuelle</strong></p><p id="119ed387-6ee2-80e6-b2f3-ee8dcf254ae8" class=""><strong>Concept:</strong></p><p id="119ed387-6ee2-80c5-bdb8-c194c056adb0" class="">Développer un musée en réalité virtuelle où les utilisateurs explorent différentes expositions représentant divers aspects de mon CV. La créativité réside dans l’utilisation de la réalité virtuelle pour transformer mon CV en un voyage artistique totalement immersif, permettant aux joueurs d’explorer mes expériences comme s’ils étaient dans une galerie. Ce n’est pas simplement un portfolio numérique, c’est une expérience 3D qui raconte mon histoire.</p><p id="119ed387-6ee2-80e8-9b7c-de3f3f73a45b" class=""><strong>Inspiration:</strong></p><p id="119ed387-6ee2-80e1-bbd8-fbe76b32aa5c" class="">Cette idée a été grandement influencée par mes visites de plusieurs musées à New York, comme le METS, le MoMA et le Guggenheim, cet été. La découverte des différents médiums d’art exposés dans ces espaces m’a inspirée à envisager la présentation de mes expériences sous forme d’expositions.</p><p id="119ed387-6ee2-8009-9224-ce48358aeca4" class=""><strong>Détails:</strong></p><ul id="119ed387-6ee2-8009-b920-f9c6c346418d" class="bulleted-list"><li style="list-style-type:disc"><strong>Hall d&#x27;entrée et carte:</strong><p id="119ed387-6ee2-8025-945e-ce1c18925357" class="">Les utilisateurs commencent dans un grand hall avec une carte leur indiquant les différentes sections du musée.</p></li></ul><ul id="119ed387-6ee2-805e-9026-e427d9b2c812" class="bulleted-list"><li style="list-style-type:disc"><strong>Sections:</strong><ul id="119ed387-6ee2-80ac-ae87-ea8db26f99cc" class="bulleted-list"><li style="list-style-type:circle"><strong>&quot;Sara Beddouch: La personne&quot;:</strong><p id="119ed387-6ee2-8024-920c-d5fdafec11ed" class="">Une exposition de type musée d&#x27;histoire présentant des objets symbolisant mon héritage et mon parcours personnel. Par exemple, un tajine symboliserait mes racines marocaines, tandis que des images de La Mecque représenteraient mon lieu de naissance à Jeddah, en Arabie Saoudite. Cette section raconterait aussi mon parcours académique, de mon premier diplôme en génie chimique à ma maîtrise actuelle en cybersécurité.</p></li></ul><ul id="119ed387-6ee2-80d1-ba7c-d83d125442d0" class="bulleted-list"><li style="list-style-type:circle"><strong>&quot;Sara Beddouch: La développeuse&quot;:</strong><p id="119ed387-6ee2-80a8-963b-d427de0e53dd" class="">Une exposition artistique mettant en évidence mes projets et mes stages sous forme de peintures et de sculptures. Mes réalisations marquantes pourraient également être représentées par des installations multimédias. Par exemple, une salle dédiée à l’application mobile Flow que j’ai développée pour aider les océanographes à échantillonner et analyser les microplastiques. Je me souviens que ce qui m’avait frappée, c’était d’apprendre que les poissons consommaient presque autant de plastique que de plancton, car ils les confondaient. J’envisage d’inclure certaines des images que j’ai vues, ainsi que celles que j’ai prises, comme partie intégrante de l’installation.</p></li></ul><ul id="119ed387-6ee2-8095-a15a-c2cc81b5bf9f" class="bulleted-list"><li style="list-style-type:circle"><strong>&quot;Sara Beddouch: La passionnée&quot;:</strong><p id="119ed387-6ee2-80b5-9726-e22587bb02b6" class="">Une exposition photographique montrant mes passe-temps et mes centres d’intérêt, comme la pâtisserie, la nature, les animaux et les paysages urbains, reflétant ainsi mon amour pour la photographie.</p></li></ul></li></ul><p id="119ed387-6ee2-8055-a18b-dd480f049720" class=""><strong>Avantages:</strong></p><ul id="119ed387-6ee2-8007-af61-c4fa6badf67a" class="bulleted-list"><li style="list-style-type:disc">Très immersif et interactif.</li></ul><ul id="119ed387-6ee2-8040-a07a-ec9f9f1a4170" class="bulleted-list"><li style="list-style-type:disc">Permet une expression créative à travers divers médiums.</li></ul><ul id="119ed387-6ee2-8039-b3b0-c4d39738ea32" class="bulleted-list"><li style="list-style-type:disc">Offre une expérience utilisateur unique et mémorable.</li></ul><p id="119ed387-6ee2-8041-bec8-ea82154b5f25" class=""><strong>Défis:</strong></p><ul id="119ed387-6ee2-8069-aef2-f93792a88121" class="bulleted-list"><li style="list-style-type:disc">Nécessite des ressources importantes en temps.</li></ul><ul id="119ed387-6ee2-80a9-a6fb-c09e220a127c" class="bulleted-list"><li style="list-style-type:disc">Peut ne pas être accessible à tous les utilisateurs en raison de la nécessité d’un casque VR.</li></ul><p id="119ed387-6ee2-8017-aed7-c0ae9beb5442" class=""><strong>2. Jeu de plateforme 2D avec mini-jeux</strong></p><p id="119ed387-6ee2-80bf-b937-eece24dc5dbc" class=""><strong>Concept:</strong></p><p id="119ed387-6ee2-80be-8a77-eab81ef632e3" class="">Créer un jeu de plateforme 2D où le personnage principal (moi) navigue à travers des niveaux représentant les différentes étapes de ma carrière, chacun incluant des mini-jeux uniques qui mettent en avant des compétences et expériences spécifiques. Ce qui apporte une touche créative, c’est la façon dont je simplifie des rôles complexes en les transformant en un jeu interactif et divertissant, ce qui rend mon parcours à la fois ludique et accessible.</p><p id="119ed387-6ee2-801c-ab1e-fc98222c670b" class=""><strong>Détails:</strong></p><p id="119ed387-6ee2-8030-8a4e-fa423a6dd38e" class="">Chaque niveau correspond à un stage ou un projet important, avec des mécaniques de jeu qui reflètent les compétences et défis de cette expérience.</p><ul id="119ed387-6ee2-804e-8a1f-d5b695ca407a" class="bulleted-list"><li style="list-style-type:disc"><strong>Mini-jeux:</strong><ul id="119ed387-6ee2-80d2-94fb-e33c6a94ed25" class="bulleted-list"><li style="list-style-type:circle"><strong>Niveau Ribbon:</strong><p id="119ed387-6ee2-8089-a738-f29297104a4a" class="">Inspiré par mon stage chez Ribbon, où j’ai mis en place un système de surveillance et d’alerte pour les routines défaillantes. Le mini-jeu implique que le joueur identifie et click sur les fichiers corompus.</p></li></ul><ul id="119ed387-6ee2-80ed-94ee-c18fc780e3de" class="bulleted-list"><li style="list-style-type:circle"><strong>Niveau Cisco:</strong><p id="119ed387-6ee2-8091-ab3b-fd802c10ea3c" class="">Basé sur mon rôle en DevOps chez Cisco, le jeu est un casse-tête où l’utilisateur doit construire un pipeline du début à la fin, similaire à la création de pipelines de test dans un environnement de test.</p></li></ul><ul id="119ed387-6ee2-803c-a9a5-f043044ba832" class="bulleted-list"><li style="list-style-type:circle"><strong>Niveau Microsoft:</strong><br/>Basé sur mon stage en tant que CSA chez Microsoft, où j’ai travaillé sur un agent d’IA pour simuler des entrevues en anglais. Une partie de ce projet impliquait l’utilisation de ChatGPT pour poser des questions. On pourrait ainsi imaginer un jeu où l’utilisateur doit interagir avec ChatGPT pour lui faire révéler un secret, un concept similaire au jeu <br/><a href="https://gandalf.lakera.ai/baseline">Gandalf</a>.</li></ul><ul id="119ed387-6ee2-801e-81b0-ef66179b6b18" class="bulleted-list"><li style="list-style-type:circle"><strong>Niveau MongoDB:</strong><p id="119ed387-6ee2-8031-ab34-c7f87b8c0b63" class="">Finalement, lors de mon dernier stage chez MongoDB, où j’ai travaillé sur l’automatisation des pipelines pour générer des fichiers Locust, le mini-jeu consisterait à demander aux joueurs de classer les étapes dans l’ordre approprié pour obtenir le résultat souhaité en fonction d’un contexte donné.</p></li></ul></li></ul><p id="119ed387-6ee2-8024-a3e7-d05136eeedcc" class=""><strong>Avantages:</strong></p><ul id="119ed387-6ee2-8064-bb73-e020d8dfc506" class="bulleted-list"><li style="list-style-type:disc">Réalisable avec les ressources disponibles.</li></ul><ul id="119ed387-6ee2-80de-ab78-cd80af53223c" class="bulleted-list"><li style="list-style-type:disc">Engage les utilisateurs à travers des mini-jeux variés.</li></ul><ul id="119ed387-6ee2-8012-bb9d-ef0c990bb1f9" class="bulleted-list"><li style="list-style-type:disc">Permet de raconter une histoire et de développer un personnage, ce qui me donne l’opportunité d’y intégrer ma personnalité.</li></ul><p id="119ed387-6ee2-804e-a82a-fa5b28cd70ad" class=""><strong>Défis:</strong></p><ul id="119ed387-6ee2-8073-99ee-c66e4030301c" class="bulleted-list"><li style="list-style-type:disc">Assurer une narration cohérente à travers les différents mini-jeux.</li></ul><ul id="119ed387-6ee2-8025-804f-cc6774800922" class="bulleted-list"><li style="list-style-type:disc">Intégrer les aspects personnels et les réalisations au-delà de l’expérience professionnelle.</li></ul><h2 id="119ed387-6ee2-806b-b596-e8afd996ae8f" class="">Phase 4: La décision finale</h2><p id="119ed387-6ee2-8003-a05a-c58a863c5262" class="">Après avoir réfléchi à mes objectifs et discuté avec mon frère et mon partenaire, nous sommes arrivés à la conclusion que le jeu de plateforme 2D avec des mini-jeux était le meilleur choix. Il est réalisable dans les délais et avec les ressources disponibles. De plus, il est accessible à un large public, y compris les employeurs, puisqu’il ne nécessite pas d’équipement spécialisé, comme le VR. Les mini-jeux permettent de mettre en valeur mes compétences techniques de manière interactive, tout en offrant la possibilité d’expression personnelle à travers la narration et le développement du personnage.</p><h3 id="119ed387-6ee2-8040-8791-daa0196fceeb" class="">Relever les derniers défis</h3><p id="119ed387-6ee2-80fc-a912-f11a2999c0ef" class="">J’étais très enthousiaste à l’idée de concevoir un jeu de plateforme en deux dimensions pour mon CV interactif. Cependant, j’ai rapidement réalisé que l’intégration des informations clés de mon CV, telles que mes antécédents personnels, ma formation, mes réalisations et mes centres d’intérêt, allait être un défi majeur. Je ne voulais pas surcharger le jeu ou submerger l’utilisateur avec des informations éparpillées.</p><p id="119ed387-6ee2-805a-b3e3-e48aa97481a7" class="">Alors que je cherchais une solution, je me suis souvenue du concept de fiches de personnage dans les jeux de rôle comme Donjons et Dragons (DnD). Ces fiches détaillent les attributs, l’historique, les compétences et l’équipement d’un personnage de manière organisée et facile d’accès. Cela m’a inspirée à envisager la création d’une fiche de personnage dans mon jeu, qui centraliserait les informations de mon CV sans perturber le déroulement de la partie.</p><h2 id="119ed387-6ee2-8040-9ae4-f5ab975c00b1" class="">Phase 5: Conception du jeu 2D - Iteration 1</h2><p id="119ed387-6ee2-8066-8669-ec9140530f61" class="">Confiante, j&#x27;ai commencé par concevoir un personnage qui me représente. Il était important pour moi que ce personnage reflète ma personnalité et mon apparence, alors j’ai mis l’accent sur des traits distinctifs qui me tiennent à cœur.</p><h3 id="119ed387-6ee2-80f4-97dd-d85edae73583" class="">Personnage</h3><ul id="119ed387-6ee2-8089-ae36-dc8844115e2c" class="bulleted-list"><li style="list-style-type:disc"><strong>Sprites de référence</strong><figure id="119ed387-6ee2-804f-9c69-fac04d7c18e2" class="image"><a href="03_Jump.png"><img src="03_Jump.png"/></a></figure><figure id="119ed387-6ee2-809a-8054-ff8f25de5616" class="image"><a href="01_Idle.png"><img src="01_Idle.png"/></a></figure><figure id="119ed387-6ee2-8048-b9c9-d082cc1e1c8d" class="image"><a href="02_Run.png"><img src="02_Run.png"/></a></figure></li></ul><p id="119ed387-6ee2-8038-b327-c63e6379a645" class="">En m&#x27;inspirant de ces références, j&#x27;ai créé mes sprites.</p><ul id="119ed387-6ee2-80d5-a38a-dbc0347f20f8" class="bulleted-list"><li style="list-style-type:disc"><strong>Mes sprites personnalisés</strong><figure id="119ed387-6ee2-8016-9a48-dd9bdb2318c3" class="image"><a href="r_jump.png"><img src="r_jump.png"/></a></figure><figure id="119ed387-6ee2-8032-9f79-f824f1f9e029" class="image"><a href="r_still.png"><img src="r_still.png"/></a></figure><figure id="119ed387-6ee2-802c-ad72-ce9069ac88cb" class="image"><a href="r_run.png"><img src="r_run.png"/></a></figure></li></ul><p id="119ed387-6ee2-8018-9419-d10659278133" class="">J’ai choisi de mettre l’accent sur mes boucles naturelles dans la conception de mon personnage, car c’est une caractéristique distinctive de mon apparence et de mon identité. J’ai également opté pour un style mignon, qui correspond à mon propre style et ajoute une touche de charme au jeu.</p><h3 id="119ed387-6ee2-80a7-bdff-d5b2d9049609" class=""><strong>Arrière-plan</strong></h3><p id="119ed387-6ee2-80e0-a370-c3090969dd61" class="">Ensuite, j’ai imaginé une scène en perspective, avec un effet de parallaxe, où les différentes couches se déplacent à des vitesses différentes, ce qui crée de la profondeur. Pour cela, j’ai dû dessiner chaque élément séparément.</p><ul id="119ed387-6ee2-8011-a5a7-e12c25e63e9d" class="bulleted-list"><li style="list-style-type:disc"><strong>Couche ciel</strong><figure id="119ed387-6ee2-804a-b204-f9872d8d0d8c" class="image"><a href="1_sky.png"><img src="1_sky.png"/></a></figure></li></ul><ul id="119ed387-6ee2-80c2-8f5d-ea5aa069972b" class="bulleted-list"><li style="list-style-type:disc"><strong>Couche nuages</strong><figure id="119ed387-6ee2-80d4-8f02-f2acd9a3d89d" class="image"><a href="3_clouds.png"><img src="3_clouds.png"/></a></figure></li></ul><ul id="119ed387-6ee2-8089-b9fa-fe6782d43430" class="bulleted-list"><li style="list-style-type:disc"><strong>Couche sol</strong><figure id="119ed387-6ee2-80f7-9b0a-dd88689197ed" class="image"><a href="5_ground.png"><img src="5_ground.png"/></a></figure></li></ul><ul id="119ed387-6ee2-80a4-953a-ed6fa3b1142b" class="bulleted-list"><li style="list-style-type:disc"><strong>Éléments d&#x27;arbre</strong><div id="119ed387-6ee2-8044-8079-e923f07c80a6" class="column-list"><div id="b1ada91b-122c-456b-b744-58db5deed95a" style="width:33.33333333333333%" class="column"><figure id="119ed387-6ee2-807b-9cd3-f5c21986ddd0" class="image"><a href="94e7dafd-9704-42a7-aac3-15ee7dd96cfc.png"><img style="width:583.7037037037038px" src="94e7dafd-9704-42a7-aac3-15ee7dd96cfc.png"/></a></figure></div><div id="e4900a11-a357-480c-9030-f7225ae30ccc" style="width:33.33333333333333%" class="column"><figure id="119ed387-6ee2-8007-a6b1-ec137ffcfb13" class="image"><a href="9492be80-69ae-4aa6-b9bd-bf089b9b95d3.png"><img style="width:583.7037037037038px" src="9492be80-69ae-4aa6-b9bd-bf089b9b95d3.png"/></a></figure></div><div id="61254bd8-5913-4f7d-a866-229d35a35c1a" style="width:33.33333333333333%" class="column"><figure id="119ed387-6ee2-8056-af34-ee4c20260382" class="image"><a href="efa8eb36-bcaf-4302-bda5-5ce9069f82b2.png"><img style="width:554.074074074074px" src="efa8eb36-bcaf-4302-bda5-5ce9069f82b2.png"/></a></figure></div></div></li></ul><h3 id="119ed387-6ee2-80e3-b236-cf89ea44d6df" class="">Implémentation initiale</h3><p id="119ed387-6ee2-800e-9ea1-f7fedf7c2661" class="">J’ai ajouté ces éléments dans une application Web et j’ai travaillé sur les mécanismes du jeu, en programmant les contrôles du personnage pour qu’elle puisse courir et sauter.</p><figure id="11aed387-6ee2-80a6-a1e9-d9330c0b937a" class="image"><a href="image%201.png"><img style="width:707.9688110351562px" src="image%201.png"/></a></figure><h3 id="119ed387-6ee2-8058-ae4d-c97c8c9cd62b" class="">Premier mini-jeu</h3><p id="119ed387-6ee2-806a-8e28-e8ae8a87731e" class="">Une fois les mécaniques de base en place, j’ai développé le premier mini-jeu représentant mon stage chez Ribbon. Comme je l’ai expliqué plus haut, dans ce niveau, le joueur doit sélectionner les fichiers corrompus (qui contiennent des erreurs), reflétant les tâches d’observabilité que j’ai effectuées lors de mon stage. </p><p id="119ed387-6ee2-8036-ac19-cb162120e708" class=""><strong>Vidéo du jeu</strong></p><figure id="11aed387-6ee2-8068-8590-c8df91bbcb8a" class="video-container">
+    <iframe 
+        src="https://www.youtube.com/embed/pFqDb-4AxN8" 
+        title="Vidéo du jeu" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</figure><p id="119ed387-6ee2-80f9-95dd-c442ef14bcde" class="">À ce stade, j&#x27;étais satisfaite des progrès. Le jeu prenait forme et je sentais qu’il reflétait bien mon expérience professionnelle.</p><h2 id="119ed387-6ee2-805e-8b7a-d4c67485505f" class="">Phase 6: Une inspiration inattendue</h2><p id="119ed387-6ee2-800f-93c5-eb4a040c9ce6" class="">Le 27 septembre, lors d’une visite chez une amie, j’ai eu un moment d’inspiration inattendu. L’un de ses colocataires jouait au nouveau jeu Persona. En observant le système de menu du jeu, j’ai été immédiatement captivée par la manière dont il présentait des informations sur les personnages de façon dynamique et centralisée. Les menus étaient à la fois visuellement attrayants et intuitifs.</p><p id="119ed387-6ee2-8093-97b9-d62b07cfe363" class=""><strong>Exemple du menu de Persona</strong></p><figure id="119ed387-6ee2-8094-8e76-d3552ae9888b" class="image"><a href="image%202.png"><img style="width:3840px" src="image%202.png"/></a></figure><p id="119ed387-6ee2-80ea-b560-fb63fb426e2c" class="">Cette réalisation a marqué un tournant. Je me suis dit: « Pourquoi ne pas faire du menu le CV ? ». En intégrant un système de menu, je pourrais présenter toutes mes informations en un seul endroit, accessible à tout moment, sans obliger les utilisateurs à chercher des détails dans le monde du jeu. Les mini-jeux interactifs resteraient des expériences optionnelles pour ceux qui souhaitent explorer davantage.</p><h3 id="119ed387-6ee2-80a6-95dc-ed5151f9bf16" class="">Associer les éléments du CV aux composants du menu</h3><p id="119ed387-6ee2-809f-a2aa-e02c59bbc4df" class="">J’ai commencé à associer les différentes sections de mon CV aux éléments typiques d’un menu de jeu de rôle:</p><figure id="119ed387-6ee2-8062-98fc-f45e568a25f8" class="image"><a href="image%203.png"><img style="width:707.9977416992188px" src="image%203.png"/></a></figure><p id="119ed387-6ee2-805d-85aa-cbba6c715a27" class="">J’ai atterri sur ces éléments pour le menu</p><ul id="119ed387-6ee2-80e9-9999-c1e03eacb4f7" class="bulleted-list"><li style="list-style-type:disc"><strong>À propos (</strong><em><strong>About</strong></em><strong>) : </strong>court paragraphe contenant mes informations personnelles, mes coordonnées et un aperçu de mon parcours et de mes centres d’intérêt.</li></ul><ul id="119ed387-6ee2-80ef-a24b-e7d5a72bd40e" class="bulleted-list"><li style="list-style-type:disc"><strong>Statistiques (</strong><em><strong>Stats</strong></em><strong>)</strong><ul id="119ed387-6ee2-801c-ad6c-eef356a03f1b" class="bulleted-list"><li style="list-style-type:circle"><strong>Niveau (</strong><em><strong>Level</strong></em><strong>):</strong> représente mon niveau d’études, avec des points d’expérience gagnés pour chaque diplôme obtenu.</li></ul><ul id="119ed387-6ee2-8086-9534-dca4a232d6f3" class="bulleted-list"><li style="list-style-type:circle"><strong>Forces (</strong><em><strong>Power</strong></em><strong>):</strong> met en évidence mes points forts à l’aide d’un graphique similaire à celui-ci :<figure id="119ed387-6ee2-8086-87fc-c4b6daa8c321" class="image"><a href="image%204.png"><img src="image%204.png"/></a></figure></li></ul></li></ul><ul id="119ed387-6ee2-80e8-907f-f9819841d6e5" class="bulleted-list"><li style="list-style-type:disc"><strong>Compétences (</strong><em><strong>Skills</strong></em><strong>):</strong><ul id="119ed387-6ee2-80fe-ba66-f944059cbf9a" class="bulleted-list"><li style="list-style-type:circle"><strong>Langages:</strong> Langages de programmation que je maîtrise.</li></ul><ul id="119ed387-6ee2-80f5-8153-e20b57c1f003" class="bulleted-list"><li style="list-style-type:circle"><strong>Outils:</strong> Logiciels et outils que je maîtrise.</li></ul></li></ul><ul id="119ed387-6ee2-8022-bce3-f9756f896e22" class="bulleted-list"><li style="list-style-type:disc"><strong>Quêtes (</strong><em><strong>Quests</strong></em><strong>):</strong> chaque poste ou stage est représenté sous forme de quête. Similaire aux jeux de plateforme 2D.</li></ul><ul id="119ed387-6ee2-80b1-98c1-e494444ed1e2" class="bulleted-list"><li style="list-style-type:disc"><strong>Inventaire (</strong><em><strong>Inventory</strong></em><strong>):</strong> une liste de prix, hackathons et CTF auxquels j’ai participé.</li></ul><h3 id="119ed387-6ee2-8003-8faf-d3962fae3600" class="">Réflexion sur le processus créatif</h3><p id="119ed387-6ee2-80bf-b8f7-ea2347f6193a" class="">Ce changement d’approche a marqué un tournant dans le développement du projet. Il montre bien l’importance de rester ouvert aux nouvelles perspectives, même lorsqu’elles proviennent de sources improbables. Cette prise de conscience m’a aussi fait comprendre l’importance de s’immerger complètement dans ce que l’on souhaite créer. C’est en regardant quelqu’un jouer à un jeu vidéo que des idées de design ou de mécanique de jeu peuvent surgir, par exemple, pour les menus du jeu « Persona ». Malheureusement, il me reste très peu de temps avant la date limite.</p><h2 id="119ed387-6ee2-8042-bc56-f9d904e3f748" class="">Phase 7: Conception de l’interface de menu - Iteration 2</h2><p id="119ed387-6ee2-8023-8a8f-e9e13959ffc3" class="">Avec cette structure en tête, j&#x27;ai esquissé des maquettes pour concevoir l&#x27;interface du menu. Mon objectif était de créer une interface épurée et attrayante. J&#x27;ai également conçu mon avatar féminin sur un logiciel appelé Vroid Studio, où j&#x27;ai pris soin de lui donner des cheveux bouclés (dessinés à la main, puisque le logiciel ne propose que des cheveux lisses).</p><h3 id="119ed387-6ee2-8051-bd29-f7398d92cdf3" class="">Maquettes</h3><figure id="119ed387-6ee2-80b4-a1df-f030952ac373" class="image"><a href="image%205.png"><img style="width:707.9745483398438px" src="image%205.png"/></a></figure><figure id="119ed387-6ee2-80b9-a078-e8b59d358358" class="image"><a href="image%206.png"><img style="width:2880px" src="image%206.png"/></a></figure><figure id="119ed387-6ee2-8043-a0b8-ea2cfd7189b0" class="image"><a href="image%207.png"><img style="width:707.9745483398438px" src="image%207.png"/></a></figure><figure id="119ed387-6ee2-8033-86e4-de430da65813" class="image"><a href="image%208.png"><img style="width:707.9745483398438px" src="image%208.png"/></a></figure><figure id="119ed387-6ee2-8067-80dc-cfb507b959de" class="image"><a href="image%209.png"><img style="width:2880px" src="image%209.png"/></a></figure><figure id="119ed387-6ee2-80c3-850b-de2fac778791" class="image"><a href="image%2010.png"><img style="width:2880px" src="image%2010.png"/></a></figure><figure id="119ed387-6ee2-8043-afc1-df99d7183825" class="image"><a href="image%2011.png"><img style="width:707.9745483398438px" src="image%2011.png"/></a></figure><figure id="119ed387-6ee2-805b-8f49-fbfea4f1223c" class="image"><a href="image%2012.png"><img style="width:707.9745483398438px" src="image%2012.png"/></a></figure><h3 id="119ed387-6ee2-8063-8272-d8ed90de18a2" class="">Affiner le jeu en fonction des personas utilisateurs</h3><p id="119ed387-6ee2-8071-8462-d2d0f57339d4" class="">Après avoir progressé dans la création du système de menu de mon jeu, j’ai décidé de vérifier si mon CV interactif répond effectivement aux attentes de ses utilisateurs. Pour ce faire, j’ai créé deux profils détaillés de personnes types susceptibles d’utiliser mon CV-jeu : une gestionnaire des ressources humaines et un gestionnaire technique.</p><h3 id="119ed387-6ee2-8019-a6ec-d2588b603b16" class=""><strong>Persona de la gestionnaire RH</strong></h3><figure id="119ed387-6ee2-8075-b94c-e7a1deb5d2fa" class="image"><a href="Layla_Bouchard.png"><img style="width:707.9861450195312px" src="Layla_Bouchard.png"/></a></figure><h3 id="119ed387-6ee2-80e0-9d54-d8a2a7605b70" class=""><strong>Persona du gestionnaire technique</strong></h3><figure id="119ed387-6ee2-8079-a100-e193f2ac006c" class="image"><a href="Sean_Wright.png"><img style="width:707.9745483398438px" src="Sean_Wright.png"/></a></figure><h3 id="119ed387-6ee2-8000-9007-e095e877bd80" class="">Itérations basées sur l&#x27;analyse des personas</h3><p id="119ed387-6ee2-8095-8e95-fae844f3dfc1" class="">En tenant compte des besoins spécifiques et des frustrations de Layla et Sean, j&#x27;ai affiné le CV-jeu pour mieux répondre à leurs attentes.</p><h3 id="119ed387-6ee2-8002-8f44-cdf0351708b2" class=""><strong>1. Assistance vocale</strong></h3><p id="119ed387-6ee2-8077-89ad-c543ad7180d6" class="">Pour simplifier la navigation et rendre l&#x27;expérience plus personnelle, j&#x27;ai ajouté une option permettant aux utilisateurs d&#x27;interagir vocalement avec mon avatar. Celui-ci peut répondre aux questions sur mon CV et guider les utilisateurs vers des sections spécifiques du menu.</p><p id="119ed387-6ee2-80df-8548-e682ada03ee6" class="">Cela facilitera la navigation pour des personnes comme Layla, qui souhaitent accéder rapidement à l&#x27;information, et mettra en avant mes compétences techniques pour des personnes comme Sean, qui préfèrent voir des actions concrètes plutôt que de simples descriptions.</p><h3 id="119ed387-6ee2-8097-96f0-fd8dc335d2cf" class=""><strong>2. Option &quot;Speed Run&quot;</strong></h3><p id="119ed387-6ee2-801a-8c43-cba75deb916b" class="">Conscient que tous les utilisateurs n&#x27;ont pas le temps ou l&#x27;envie de jouer à tout le jeu, j&#x27;ai inclus une option &quot;Speed Run&quot;. Cette fonctionnalité permet de visionner une présentation rapide du jeu, montrant tous les niveaux comme s&#x27;ils étaient joués, mais de manière automatique, sans contrôle de l&#x27;utilisateur.</p><p id="119ed387-6ee2-80b3-a6cf-d510ee1f12b8" class="">Pour Layla, le speed run offre une vue d&#x27;ensemble de mes expériences et compétences sans demander trop de temps. Quant à Sean, il peut rapidement évaluer mes compétences techniques et mes expériences en observant les défis et projets présentés dans le jeu.</p><h2 id="119ed387-6ee2-80fa-b68b-f4a8ccd871e4" class="">Produit final — LevelUp</h2><p id="119ed387-6ee2-8035-a213-e12d759ae29d" class=""><strong>Vidéo du Menu</strong></p><figure class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/J0ZLSU_8Sqg" 
+                    title="Vidéo du Menu" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </figure><h2 id="119ed387-6ee2-808d-9000-e9757e4abc10" class="">Réflexion sur la créativité de mon projet</h2><p id="119ed387-6ee2-8079-a772-c09521af3296" class="">La création d’un CV interactif sous forme de jeu vidéo a été une expérience enrichissante, combinant programmation, design et narration.</p><h3 id="119ed387-6ee2-80c0-856d-e94ca556043a" class="">Ce qui rend mon projet créatif</h3><p id="119ed387-6ee2-8019-bdd5-e0df8d17e2b8" class="">Mon projet réinvente le CV classique en le transformant en aventure interactive. Au lieu de présenter mes compétences de façon statique, j’ai conçu un univers ludique où les recruteurs peuvent explorer mon parcours. Chaque expérience professionnelle est accompagnée de mini-jeux, permettant de découvrir les défis que j’ai relevés. Cette approche originale met en avant à la fois mes compétences et ma créativité.</p><h3 id="119ed387-6ee2-80f9-9268-cbe730697d64" class="">Réflexion sur mon processus</h3><ol type="1" id="119ed387-6ee2-80b4-a44e-da253e793005" class="numbered-list" start="1"><li><strong>L&#x27;idée:</strong> L&#x27;origine de mon projet vient du constat que les CV classiques manquent d&#x27;impact. Mon frère, pourtant un excellent programmeur, rencontrait des obstacles pour décrocher des entretiens. Cela m&#x27;a fait prendre conscience des limites d&#x27;un CV statique, et m&#x27;a poussée à imaginer un format plus innovant et personnalisé pour capter l&#x27;attention des recruteurs. Ici, il est clair que l’idée découle de facteurs externes, que ce soit les expériences de mon frère ou l’enthousiasme de mon enseignante.</li></ol><ol type="1" id="119ed387-6ee2-8052-bafd-d70ca8307d63" class="numbered-list" start="2"><li><strong>Recherche et Inspiration:</strong> En explorant des CV interactifs tels que ceux de Robby Leonardi et Bruno Simon, j&#x27;ai pu identifier leurs points forts et leurs faiblesses pour ensuite développer ma propre approche. Cette analyse était essentielle pour démontrer en quoi mon CV-jeu est créatif et unique. Ma principale constatation a été que personne n&#x27;avait encore représenté leur parcours professionnel sous forme de mini-jeux mettant en scène les rôles et projets réalisés.</li></ol><ol type="1" id="119ed387-6ee2-8037-8fde-f399c4d573ff" class="numbered-list" start="3"><li><strong>Idéation</strong>: Grâce à des méthodes comme le « mind mapping » et le SCAMPER, j’ai pu générer plusieurs idées potentielles pour mon CV. Ces techniques m’ont permis d’établir des liens entre des idées qui semblaient a priori sans rapport et de considérer mon CV sous différents angles. Par exemple, le « mind mapping » m’a aidée à comprendre comment les mécanismes de jeu reflètent mes compétences, tandis que le SCAMPER m’a incitée à repenser le format de mon CV.</li></ol><ol type="1" id="119ed387-6ee2-8081-817d-e1ae182ae178" class="numbered-list" start="4"><li><strong>Choix du concept</strong>: J&#x27;ai opté pour un jeu de plateforme 2D avec des mini-jeux, en prenant en compte la faisabilité technique et l&#x27;accessibilité. Les retours de mon entourage ont joué un rôle crucial dans cette décision, soulignant l&#x27;importance du feedback dans le processus créatif.</li></ol><ol type="1" id="119ed387-6ee2-8037-a637-dc69934ccd9b" class="numbered-list" start="5"><li><strong>Création des éléments visuels</strong>: J&#x27;ai conçu des sprites et arrière-plans pour donner vie à mon avatar, en m&#x27;assurant qu&#x27;il reflète fidèlement ma personnalité, tout en mélangeant mes compétences techniques et artistiques.</li></ol><ol type="1" id="119ed387-6ee2-809a-8096-c3aa607c58b5" class="numbered-list" start="6"><li><strong>Réévaluation et ajustement</strong>: C’est en découvrant le jeu « Persona » par hasard que m’est venue l’idée de centraliser les informations de mon CV dans un menu de navigation. Cette flexibilité dans mon processus créatif démontre l’importance de rester ouvert aux nouvelles idées et de savoir adapter son projet en fonction des découvertes et des inspirations.</li></ol><ol type="1" id="119ed387-6ee2-8007-8290-c3a77010bce7" class="numbered-list" start="7"><li><strong>Dernière itération</strong>: L&#x27;ajout de fonctionnalités comme l&#x27;assistance vocale et le mode « <em>Speed Run</em> » répond aux besoins des utilisateurs identifiés lors de la création de personas, tout en améliorant l&#x27;expérience globale. Ces éléments sont également novateurs, en particulier l&#x27;assistance vocale, qui apporte une dimension plus interactive et personnalisée en permettant de converser directement avec mon personnage.</li></ol><p id="119ed387-6ee2-80a7-8adc-cd3ab1c7808d" class="">Mon processus créatif a été à la fois itératif et multidisciplinaire, mêlant réflexion personnelle, recherche, conception et développement technique. À chaque étape, j&#x27;ai cherché à innover et à sortir des schémas traditionnels. Les outils créatifs m&#x27;ont aidée à affiner mes idées, tandis que les feedbacks extérieurs ont enrichi mon projet. La métacognition m&#x27;a permis de comprendre et d&#x27;ajuster mes stratégies créatives, soulignant l&#x27;importance d&#x27;une approche flexible et ouverte.</p><h2 id="119ed387-6ee2-80d6-8886-f5fc06c12b9a" class="">Conclusion</h2><p id="119ed387-6ee2-80e2-8c31-c6a952e23fbd" class="">À travers ce projet, j&#x27;ai découvert une véritable passion pour la création artistique, que ce soit dans le développement de jeux ou le dessin. J&#x27;ai réalisé que la créativité n&#x27;est pas linéaire, mais un processus fluide, rempli de découvertes inattendues. En revisitant mon CV sous forme de jeu interactif, j&#x27;ai non seulement repoussé mes limites, mais aussi créé une œuvre qui me reflète pleinement, tant professionnellement que personnellement. Pour les prochaines étapes, j&#x27;espère pouvoir bientôt compléter l&#x27;intégralité des mini-jeux et ajouter les fonctionnalités d&#x27;assistance vocale et de <em>speed run</em>, afin de le déployer et le rendre accessible à tous. Qui sait, peut-être que ce concept évoluera encore et empruntera de nouveaux chemins.<br/><br/><br/></p><p id="119ed387-6ee2-80aa-a755-ce8215a6dab4" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
